@@ -19,4 +19,4 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+] #Uma paradinha ja pronta pra quando eu botar /admin na url do site
