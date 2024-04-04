@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Receitas da Palmirinha</h1>
+
+    <!-- Tags de Template-->
+    Endereço do {{ Nome }} <br>
+    {{ Endereço }}, {{ Bairro }} - {{ Cidade }} - {{ Estado }}
+    
+
+    <div>
+        Ingredientes
+        <ul>
+            <!--Estrutura de repetição, so traduzir ai colega.-->
+            {% for ing in Ingredientes %}
+                <li> {{ ing }} </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <p>By AmorimDev</p>
+</body>
+</html>
