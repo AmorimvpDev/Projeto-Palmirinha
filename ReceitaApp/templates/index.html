@@ -6,7 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Página Inicial</div>
+    <h1>Página Inicial</h1>
     <a href="/receitas">Receitas</a>
+
+    <ul>
+        {% for categoria in categorias %}
+         <li>{{ categoria.nome }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

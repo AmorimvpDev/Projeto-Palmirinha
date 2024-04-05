@@ -10,9 +10,9 @@ class Categoria(models.Model):
 class Receita(models.Model):
 
     DIFICULDADE = [
-        ('Ez', 'Fácil'),
-        ('Mod', 'Moderado'),
-        ('Hard', 'Difícil')
+        ('Facin', 'Fácil'),
+        ('Moderado', 'Moderado'),
+        ('Complicado', 'Difícil')
     ]
     
     nome = models.CharField(max_length = 50)

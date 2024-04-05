@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Receitas da Palmirinha</h1>
 
     <!-- Tags de Template-->
-    Endereço do {{ Nome }} <br>
-    {{ Endereço }}, {{ Bairro }} - {{ Cidade }} - {{ Estado }}
     
+    <ul>
+        {% for receita in receitas %}
+         <li><a href="/receita/{{ receita.id }}"> {{ receita.nome }}</a> ({{ receita.grau_de_dificuldade }})</li>
+        {% endfor %}
+    </ul>
 
-    <div>
-        Ingredientes
-        <ul>
-            <!--Estrutura de repetição, so traduzir ai colega.-->
-            {% for ing in Ingredientes %}
-                <li> {{ ing }} </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <p>By AmorimDev</p>
+    <p><a href="https://www.instagram.com/amorimvp/">By AmorimDev</a></p>
 </body>
 </html>

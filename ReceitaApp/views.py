@@ -1,24 +1,40 @@
 from django.shortcuts import render
-
+from ReceitaApp.models import Receita, Categoria
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+
+    categorias = Categoria.objects.all()
+    context = {
+        'categorias' : categorias
+    }
+
+    return render(request, 'index.html', context)
                    #requisitar
+        
 
 def listar_receitas(request):
-    nome = 'Arthur'
-    ingredientes = ['Farinha', 'Ovos', 'Manteiga', 'Leite']
+    #Buscar as receitas no banco de dados utilizando ORM do Django
+
+    #ta puxando tudo la do banco de dados
+    receitas = Receita.objects.all()
+
+    
     #dicionario que vai levar os dados para o template
     #chave : valor
     context = {
-        'Endereço' : 'Av.Marechal Tito',
-        'Bairro' : 'São Miguel Paulista',
-        'Cidade' : 'São Paulo',
-        'Estado' : 'SP',
-        'Nome' : nome,
-        'Ingredientes' : ingredientes
+        'receitas' : receitas
     }
-
+    
     #qual template essa view vai retornar
-    return render(request, 'receitas.html', context)
+    return render(request, 'receitas.html ', context)
+
+def detalhes_receita(request, id):
+    #vamo aqui buscar a receita referente a seu id
+    receita = Receita.objects.get(id = id)
+
+    context = {
+        'receita' : receita
+    }    
+    
+    return render(request, 'receita.html', context)
